@@ -1,0 +1,15 @@
+[Unit]
+Description=Dom1Uz
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/my_bots/dom1uz
+ExecStart=/my_bots/dom1uz/.venv/bin/python3.11 /my_bots/dom1uz/main.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
